@@ -1,6 +1,6 @@
 import express from 'express'
 import connection from './db/connectionDb.js'
-import productRouter from './src/modules/product/product.routes.js'
+import productRouter from './src/modules/Product/product.routes.js'
 import orderRouter from './src/modules/Order/order.routes.js'
 import customerrouter from './src/modules/Customer/customer.routes.js'
 const app = express()
