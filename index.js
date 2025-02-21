@@ -1,10 +1,10 @@
 import express from 'express'
 import connection from './db/connectionDb.js'
-import CustomerRouter from './src/modules/Customer/customer.routes.js'
 import productRouter from './src/modules/product/product.routes.js'
 import orderRouter from './src/modules/Order/order.routes.js'
+import customerrouter from './src/modules/Customer/customer.routes.js'
 const app = express()
-const port = process.env.port || 3000
+const port = 3000
 
 app.use(express.json())
 connection.connect((err) => {
@@ -15,7 +15,7 @@ connection.connect((err) => {
     }
 })
 
-app.use("/Customers", CustomerRouter)
+app.use("/Customers", customerrouter)
 app.use("/Products", productRouter)
 app.use("/Order", orderRouter)
 app.get('/', (req, res, next) => {
@@ -31,5 +31,9 @@ app.use('*', (req, res, n) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
+
+
+
+
 
 
